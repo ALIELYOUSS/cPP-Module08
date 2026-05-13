@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <list>
+
 #include "easyfind.hpp"
 
 int main()
@@ -10,18 +8,18 @@ int main()
         vec.push_back(i * 2);
     try {
         std::vector<int>::iterator it = easyfind(vec, 6);
-        std::cout << "Found: " << *it << std::endl;
+        std::cout << "value found: " << *it << std::endl;
     } catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
 
-    std::list<int> lst;
-    lst.push_back(42);
+    std::list<int> last;
+    last.push_back(1337);
     try {
-        std::list<int>::iterator it2 = easyfind(lst, 1);
-        std::cout << "Found: " << *it2 << std::endl;
+        std::list<int>::iterator it2 = easyfind(last, 1);
+        std::cout << "value found: " << *it2 << std::endl;
     } catch (std::exception &e) {
-        std::cout << "Not found: " << e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }
     return 0;
 }

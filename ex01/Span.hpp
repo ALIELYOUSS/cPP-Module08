@@ -12,9 +12,7 @@ public:
     Span(Span const &other);
     ~Span();
     Span &operator=(Span const &other);
-
     void addNumber(int nbr);
-
     template <typename InputIt>
     void addNumber(InputIt begin, InputIt end) {
         long dist = std::distance(begin, end);
@@ -22,10 +20,8 @@ public:
             throw std::out_of_range("Not enough capacity to add range");
         _numbers.insert(_numbers.end(), begin, end);
     }
-
     int shortestSpan() const;
     int longestSpan() const;
-
 private:
     unsigned int _capacity;
     std::vector<int> _numbers;
